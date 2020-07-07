@@ -6,10 +6,10 @@ import org.junit.Test;
 public class MonotonicArrayTest {
   @Test
   public void testMonotonicExpectedTrueOrFalse() {
-    int[] numSampleOne = {1,2,2,3,2};
+    int[] numSampleOne = {2,4,2,5,2};
     boolean resultOne = MonotonicArray.monotonic(numSampleOne);
     Assert.assertFalse(resultOne);
-    int[] numSampleTwo = {6,5,4,4};
+    int[] numSampleTwo = {1,3,7};
     boolean resultTwo = MonotonicArray.monotonic(numSampleTwo);
     Assert.assertTrue(resultTwo);
   }

@@ -13,6 +13,7 @@ public class SquaresOfSortedArrayTest {
     int[] numExpected = {0,1,9,16,100};
     int[] result;
     result = SquaresOfSortedArray.sortedSquares(numSample);
+
     // Option 1
     // One way to compare arrays
     Assert.assertArrayEquals(numExpected, result);
