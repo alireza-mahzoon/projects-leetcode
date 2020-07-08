@@ -4,20 +4,16 @@ import java.util.Arrays;
 
 public class RotateArray {
 
-  public static void rotate(int[] nums, int k) {
-    for (int i = 0; i < nums.length; i++ ) {
-      if (i<=k) {
-        nums[i] = nums[i+k];
+  public static int[] rotate(int[] nums, int k) {
+    int numResult[]=new int[nums.length];
+    for ( int i = 0; i <nums.length; i++) {
+      if(i<k) {
+        numResult[i] = nums[nums.length+i-k];
       }
-      else if (i>k) {
-        nums[i] = nums[i-k+1];
+      if(i>=k) {
+        numResult[i] = nums[i-k];
       }
     }
-    System.out.println(Arrays.toString(nums));
+    return numResult;
   }
-
-  int[] numSample = {1,2,3,4,5,6,7};
-  int kSample = 3;
-
-
 }
