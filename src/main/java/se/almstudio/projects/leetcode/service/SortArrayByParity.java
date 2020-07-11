@@ -1,19 +1,17 @@
 package se.almstudio.projects.leetcode.service;
 
-
 import java.util.Arrays;
 
 public class SortArrayByParity {
 
   public static int[] sortArrayByParity(int[] A) {
 
-    int[] sortArrayByParity = new int[A.length];
+    int[] sortArrayByParity;
 
     int countEven = 0;
     int countOdd = 0;
     int counterEven = 0;
     int counterOdd = 0;
-
 
     for(int i = 0; i < A.length; i++) {
       if(A[i]%2==0) {
@@ -44,9 +42,10 @@ public class SortArrayByParity {
       }
     }
 
-   System.arraycopy(sortEven, 0, sortArrayByParity, 0, sortEven.length);
-   System.arraycopy(sortOdd, 0, sortArrayByParity, sortEven.length, sortOdd.length);
+//   System.arraycopy(sortEven, 0, sortArrayByParity, 0, sortEven.length);
+//   System.arraycopy(sortOdd, 0, sortArrayByParity, sortEven.length, sortOdd.length);
 
+    sortArrayByParity = concat(sortEven, sortOdd);
 
     System.out.println(countEven);
     System.out.println(countOdd);
@@ -55,6 +54,16 @@ public class SortArrayByParity {
     System.out.println(Arrays.toString(sortArrayByParity));
 
     return sortArrayByParity;
+  }
 
+  public static int[] concat(int[] array1, int[] array2) {
+    int array1Length = array1.length;
+    int array2Length = array2.length;
+    int[] concat = new int[array1Length + array2Length];
+
+    System.arraycopy(array1,0, concat, 0, array1Length);
+    System.arraycopy(array2,0, concat, array1Length, array2Length);
+
+    return concat;
   }
 }
