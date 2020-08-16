@@ -9,7 +9,7 @@ public class MonotonicArrayTest {
     int[] numSampleOne = {2,4,2,5,2};
     boolean resultOne = MonotonicArray.monotonic(numSampleOne);
     Assert.assertFalse(resultOne);
-    int[] numSampleTwo = {1,3,7};
+    int[] numSampleTwo = {1,3,7,7};
     boolean resultTwo = MonotonicArray.monotonic(numSampleTwo);
     Assert.assertTrue(resultTwo);
   }
