@@ -5,15 +5,15 @@ import java.util.Arrays;
 public class RotateArray {
 
   public static int[] rotate(int[] nums, int k) {
-    int numResult[]=new int[nums.length];
-    for ( int i = 0; i <nums.length; i++) {
-      if(i<k) {
-        numResult[i] = nums[nums.length+i-k];
+
+    for (int i = 0; i<k; i++) {
+      int last,j;
+      last = nums[nums.length -1];
+      for (j= nums.length -1; j>0; j--) {
+        nums[j] = nums[j-1];
       }
-      if(i>=k) {
-        numResult[i] = nums[i-k];
-      }
+      nums[0] = last;
     }
-    return numResult;
+    return nums;
   }
 }
